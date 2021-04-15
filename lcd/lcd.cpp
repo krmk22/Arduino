@@ -14,6 +14,7 @@ char PinD5;
 char PinD6;
 char PinD7;
 
+//இந்த ரூடின் ஆனது ENABLE பின் -ஐ ஹை மற்றும் லோ செய்ய உதவுகிறது
 void RollEnable()
 {
   digitalWrite(PinEnable, LOW); delayMicroseconds(5);
@@ -21,7 +22,10 @@ void RollEnable()
   digitalWrite(PinEnable, LOW); delayMicroseconds(5);
 }
 
-void LCDClear()
+//கீழே உள்ள இந்த ரூடின் டிஸ்பிலே-ல் உள்ள பழைய தரவுகளை அழிக்க 
+//உதவுகிறது. இந்த கமன்ட் ஆனது சிறிது நேரம் அதிகம் எடுத்துக்கொள்ளும்
+//என்பதால் ஒரு சிறிய டிலே ஆனது இதனுடன் கொடுக்கப்பட்டுள்ளது  
+void LCD_Clear()
 {
   LCD_Command(0x01);
   delay(20);
